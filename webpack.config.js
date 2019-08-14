@@ -2,6 +2,7 @@ const path = require( 'path' );
 const HTMLWebpackPlugin = require( 'html-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
+const ConfigWebpackPlugin = require( 'config-webpack' );
 
 /*-------------------------------------------------*/
 
@@ -54,7 +55,11 @@ module.exports = {
         // copy static files from `src` to `dist`
         new CopyWebpackPlugin( [
             { from: path.resolve( __dirname, 'src/assets' ), to: path.resolve( __dirname, 'dist/assets' ) }
-        ] )
+        ] ),
+
+        // provide `CONFIG` global variable with `config/${NODE_ENV}.json`
+        // https://www.npmjs.com/package/config-webpack
+        new ConfigWebpackPlugin()
     ],
 
     // resolve files configuration
