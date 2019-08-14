@@ -3,5 +3,5 @@ This directory containsutility functions.
 
 # import alias
 ```js
-import { stringManip } from 'utils/string-manip.util';
+import { firstLetterUpperCase } from 'utils/string-manip.util';
 ```
