@@ -1,0 +1,10 @@
+.ns-app {
+    width: 500px;
+    height: 300px;
+    background-color: #eee;
+
+    &__title {
+        font-size: 1.4rem;
+        color: blue;
+    }
+}
